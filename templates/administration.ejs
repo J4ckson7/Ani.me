@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teste</title>
+</head>
+<body>
+    <div class="container">
+        <div class="formContainer">
+            <h2 class="formTitle">
+                Adicionar um novo anime
+            </h2>
+
+            <form action="/admin/addAnime" method="post" enctype="multipart/form-data">
+                <div class="formGroup">
+                    <input type="text" name="name" placeholder="Name" value="<%= body.name %>">
+                    <input type="text" name="episode" placeholder="Episode" value="<%= body.episode %>">
+                    <input type="text" name="studio" placeholder="Studio" value="<%= body.studio %>">
+                    <input type="text" name="gender" placeholder="Gender" value="<%= body.gender %>">
+                    <input type="text" name="synopsis" placeholder="Synopsis" value="<%= body.synopsis %>">
+                    <input type="text" name="duration" placeholder="Duration" value="<%= body.duration %>">
+                    <input type="file" name="upload_file" placeholder="Cover">
+
+                    <button>
+                        Adicionar
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="formContainer">
+            <form action="/admin/addMovie" method="post">
+                
+            </form>
+        </div>
+
+        <div class="formContainer">
+            <form action="/admin/editAnime" method="post">
+                
+            </form>
+        </div>
+    </div>
+</body>
+</html>

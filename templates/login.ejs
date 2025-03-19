@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div class="formContainer">
+        <form id="formulario-registro" action='/user/userEnter' method="post">
+            <input type="email" name="email" placeholder="email" value="<%= body.email %>">
+            <input type="password" name="password" placeholder="password" value="<%= body.password %>">
+
+            <button>
+                Entrar
+            </button>
+        </form>
+    </div>
+</body>
+</html>

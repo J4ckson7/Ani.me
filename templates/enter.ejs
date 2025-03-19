@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de admin</title>
+</head>
+<body>
+    <div class="formContainer">
+        <form action="/admin/admEnter" method="post">
+            <input type="email" name="email" id="emailInput" placeholder="email" value="<%= body.email %>">
+            <input type="password" name="password" id="passwordInput" placeholder="password" value="<%= body.password %>">
+
+            <button>
+                Verificar permissão
+            </button>
+
+        </form>
+    </div>
+</body>
+</html>
