@@ -15,33 +15,14 @@ const adminController = {
             if(!selectedUser.admin) return res.status(400).send('Você não é um admin')
             
             const token = jwt.sign({name: selectedUser.name, admin : selectedUser.admin}, process.env.SECRET_KEY, { expiresIn : '1h' });
-            res.send( token )
 
+            res.cookie('access_token', token, { expires: new Date(Date.now() + 3600000), httpOnly : true })
+            res.redirect('/admin/administracao')
+            
         } catch (error) {
             res.send(error)
         }
     },
-
-    tokenRedirect : function(req, res) {
-        const token = req.body.token;
-        
-        if (!token) {
-            return res.status(401).send('Token é obrigatório.');
-        }
-        
-        try {
-            const decoded = jwt.verify(token, process.env.SECRET_KEY);
-            if (decoded.admin === true) {
-                return res.redirect('/admin/administracao');
-            } else {
-                return res.status(401).send('Você não tem permissão para acessar essa página.');
-            }
-        } catch (error) {
-            res.status(401).send('Token inválido ou expirado.');
-            console.log(error);
-        }
-
-    }
 }
 
-module.exports = adminController;
+module.exports = adminController; 

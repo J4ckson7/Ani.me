@@ -30,16 +30,31 @@
         </div>
 
         <div class="formContainer">
-            <form action="/admin/addMovie" method="post">
-                
+            <h2 class="formTitle">
+                Buscar anime para edição
+            </h2>
+            <form action="/admin/searchEditAnime" method="post">
+                <input type="text" name="name" placeholder="Name" value="<%= body.name %>">
+
+                <button>
+                    Procurar
+                </button>
             </form>
         </div>
 
         <div class="formContainer">
-            <form action="/admin/editAnime" method="post">
-                
+            <h2 class="formTitle">
+                Buscar anime para edição
+            </h2>
+            <form action="/admin/searchDelAnime" method="post">
+                <input type="text" name="name" placeholder="Name" value="<%= body.name %>">
+
+                <button>
+                    Procurar
+                </button>
             </form>
         </div>
+
     </div>
 </body>
 </html>

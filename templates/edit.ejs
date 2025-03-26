@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <div class="formContainer">
+        <h2>
+            Editar
+        </h2>
+        <form action="/admin/editAnime/<%= body.id %>" method="post">
+            <input type="text" name="name" placeholder="Name" value="<%= body.name %>">
+            <input type="text" name="episode" placeholder="Episode" value="<%= body.episode %>">
+            <input type="text" name="studio" placeholder="Studio" value="<%= body.studio %>">
+            <input type="text" name="gender" placeholder="Gender" value="<%= body.gender %>">
+            <input type="text" name="synopsis" placeholder="Synopsis" value="<%= body.synopsis %>">
+            <input type="text" name="duration" placeholder="Duration" value="<%= body.duration %>">
+
+            <button>
+                Editar
+            </button>
+        </form>
+    </div>
+</body>
+</html>
